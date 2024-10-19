@@ -1,0 +1,10 @@
+# dans le gitignore on peut ignorer des fichiers et des dossiers 
+# comme ca on pull pas trop des choses qu'on aura installées déjà sur nos machines locales
+
+
+# fichiers de configuration ou de dépendances
+/.vscode
+/vendor
+
+# fichier de environnement
+.env
