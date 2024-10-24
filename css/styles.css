@@ -1,32 +1,39 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
     color: #333;
 }
 
+
+img{
+    max-width: 100%;
+}
+
 .entete {
+    background: linear-gradient(45deg, #4ba8c0, #5d2ba2);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: white;
 }
 
-.entete__logo{
-    width: 150px;
-}
+
 .entete__lien-titre{
+    display: flex;
     text-decoration: none;
-    color: #333;
+    color: white;
+    font-size: 26px;
+
 }
 
-.entete__navigation {
-    display: flex;
-}
+
 
 .entete__liste {
     display: flex;
+    justify-content: flex-end;
 }
+
+
 
 .entete__item {
     margin-right: 20px;
@@ -34,13 +41,13 @@ body {
 
 .entete__lien {
     text-decoration: none;
-    color: #333;
+    color: white;
     font-size: 16px;
 }
 
 .principal {
     text-align: center;
-    padding: 50px 0;
+    padding: 50px;
 }
 
 .recherche {
@@ -49,12 +56,14 @@ body {
     padding: 30px;
     width: 90%;
     max-width: 600px;
-    margin: 0 auto;
+    margin: auto;
     box-shadow:  10px 7px 7px rgba(13, 13, 13, 0.1);
 }
 
 .recherche__titre {
-    font-size: 24px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
     margin-bottom: 10px;
 }
 
@@ -87,9 +96,10 @@ body {
 
 .recherche__bouton {
     padding: 15px;
-    background-color: rgb(36, 24, 146);
+    background-color: #6731b3;
     color: white;
     border: none;
+    font-size: 18px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -99,23 +109,40 @@ body {
 }
 
 
-.pied-de-page {
+/* Info section */
+.infos {
+    padding: 60px;
+    background-color: #fff;
     text-align: center;
+}
+
+.infos__titre {
+    font-size: 24px;
+    margin: 15px 0 10px;
+}
+
+.infos__text {
+    font-size: 16px;
+    color: #555;
+}
+
+/* pied de page */
+
+.pied-de-page {
+    background-color: #3a86ff;
+    color: white;
     padding: 20px;
-    background-color: white;
-    margin-top: 20px;
+    text-align: center;
 }
 
-.pied-de-page__texte {
-    margin-bottom: 10px;
-}
 
-.pied-de-page__lien {
+.pied-de-page__lien-reseau {
+    color: white;
     text-decoration: none;
+    font-size: 16px;
+    margin: 5px;
 }
 
-.pied-de-page__image {
-    width: 150px;
-    margin: 10px;
+.pied-de-page__lien-reseau:hover {
+    text-decoration: underline;
 }
-
