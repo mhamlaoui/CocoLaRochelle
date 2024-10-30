@@ -152,19 +152,42 @@ class Control
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC); // option de le chercher en format d'un tableau associatif   
         // structure: tableau['colonne']                 
-        return $result;
+        return $result ?: []; // Si $result est false, renvoie un tableau vide
     }
+    public function inscription(): string
+{
+    // Vérification si l'utilisateur existe déjà dans la base de données
+    if (!empty($this->IsInDB())) {
+        return '<p>Vous êtes déjà inscrit. Souhaitez-vous <a href="../html/log_in.html">vous connecter</a> ?</p>';
+    }
+
+    // Extraction des variables depuis $_POST
+    extract($_POST);
+
+    // Prépare la requête d'insertion
+    $requete = $this->pdo->prepare("INSERT INTO Utilisateur (nom, email, mot_de_passe, telephone) VALUES (:nom, :email, :mot_de_passe, :telephone)");
+
+    // Essaye d'exécuter la requête avec des valeurs sécurisées
+    try {
+        $requete->execute([
+            ':nom' => $nom,
+            ':email' => $email,
+            ':mot_de_passe' => password_hash($mot_de_passe, PASSWORD_DEFAULT), // Hash du mot de passe pour la sécurité
+            ':telephone' => $telephone
+        ]);
+        return '<p>Inscription réussie ! Vous pouvez maintenant <a href="../html/log_in.html">vous connecter</a>.</p>';
+    } catch (PDOException $e) {
+        return '<p>Erreur lors de l\'inscription : ' . $e->getMessage() . '</p>';
+    }
+}
+
 
     public function doAll()
     { // d'ici va commencer la loqgique de l'appli            
         
-
-        // Check pour si quelqu'un est dans la bdd
-        $query = $this->IsInDB();
-        $message = !empty($query) && isset($query) ? '<p>You already are in the database, would you like to <a href="../html/log_in.html">login?</a></p>' : '<p>Not in database, can add</p>';
-        // syntax : condition ? si condition est vraie : si condition est fausse
-        echo $message; 
-
+        if (isset($_POST['action']) && $_POST['action'] === 'inscription') {
+            echo $this->inscription();
+        }
     }
 }
 
