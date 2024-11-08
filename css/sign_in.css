@@ -1,0 +1,56 @@
+
+/* inscription */
+
+.inscription {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow:  10px 7px 7px rgba(13, 13, 13, 0.1);
+}
+
+
+.inscription__titre {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+.inscription__formulaire{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+.inscription__groupe {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.inscription__label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.inscription__champ {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.inscription__bouton {
+    padding: 15px;
+    background-color: rgb(36, 24, 146);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.inscription__bouton:hover {
+    background-color: rgb(66, 48, 226);
+}

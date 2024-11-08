@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CocoLaRochelle</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <script src="../js/main.js" defer></script>
+</head>
+<body>
+    <header class="entete">
+        <a href="index.html" class="entete__lien-titre">
+            <img src="logo.png" alt="" class="entete__logo">
+            <h1>CocoLaRochelle</h1>
+        </a>
+        <nav class="entete__navigation">
+            <ul class="entete__liste">
+                <li class="entete__item"><a href="#" class="entete__lien">Publier un trajet</a></li>
+                <li class="entete__item"><a href="#" class="entete__lien">Vos trajets</a></li>
+                <li class="entete__item"><a href="compte.html" class="entete__lien">compte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="principal">
+        <section class="recherche">
+            <h1 class="recherche__titre">Covoiturage sur La Rochelle</h1>
+            <p class="recherche__description">réservez vos trajets en covoiturage</p>
+            <form class="recherche__formulaire" action="../php/Control.php">
+                <fieldset class="recherche__groupe">
+                    <label for="depart" class="recherche__label">Adresse de départ</label>
+                    <input type="text" id="depart" class="recherche__champ" placeholder="Adresse de départ">
+                </fieldset>
+
+                <fieldset class="recherche__groupe">
+                    <label for="arrivee" class="recherche__label">Adresse d'arrivée</label>
+                    <input type="text" id="arrivee" class="recherche__champ" placeholder="Adresse d'arrivée">
+                </fieldset>
+
+                <fieldset class="recherche__groupe">
+                    <label for="date" class="recherche__label">Date</label>
+                    <input type="date" id="date" class="recherche__champ">
+                </fieldset>
+
+                <fieldset class="recherche__groupe">
+                    <label for="passagers" class="recherche__label">Passagers</label>
+                    <select id="passagers" class="recherche__selecteur">
+                        <option>1 adulte</option>
+                        <option>2 adultes</option>
+                        <option>3 adultes</option>
+                    </select>
+                </fieldset>
+
+                <button type="submit" class="recherche__bouton">Rechercher</button>
+            </form>
+        </section>
+        
+    </main>
+    <aside>
+        <section class="infos">
+            <article>
+                <h2 class="infos__titre">Pourquoi CocoLaRochelle?</h2>
+                <p class="infos__texte">Notre plateforme vous permet de voyager en toute simplicité, économisez du temps et de l'argent tout en étant éco-responsable.</p>
+            </article>
+            <article>
+                <h2 class="infos__titre">Sécurité avant tout</h2>
+                <p class="infos__texte">Tous nos conducteurs sont vérifiés pour garantir un trajet en toute sécurité.</p>
+            </article>
+            <article>
+                <h2 class="infos__titre">Options flexibles</h2>
+                <p class="infos__texte">Choisissez parmi une variété d'options pour adapter votre voyage à vos besoins.</p>
+            </article>
+        </section>
+    </aside>
+    <footer class="pied-de-page">
+        <p class="pied-de-page__texte">&copy; 2024 CocoLaRochelle - Tous droits réservés.</p>
+        <nav>
+            <a href="#" class="pied-de-page__lien-reseau">Facebook</a>
+            <a href="#" class="pied-de-page__lien-reseau">Instagram</a>
+            <a href="#" class="pied-de-page__lien-reseau">Twitter</a>
+        </nav>
+    </footer>
+
+</body>
+</html>

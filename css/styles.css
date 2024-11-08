@@ -1,0 +1,148 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+
+img{
+    max-width: 100%;
+}
+
+.entete {
+    background: linear-gradient(45deg, #4ba8c0, #5d2ba2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+
+.entete__lien-titre{
+    display: flex;
+    text-decoration: none;
+    color: white;
+    font-size: 26px;
+
+}
+
+
+
+.entete__liste {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+.entete__item {
+    margin-right: 20px;
+}
+
+.entete__lien {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.principal {
+    text-align: center;
+    padding: 50px;
+}
+
+.recherche {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    box-shadow:  10px 7px 7px rgba(13, 13, 13, 0.1);
+}
+
+.recherche__titre {
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.recherche__description {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.recherche__formulaire {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.recherche__groupe {
+    display: flex;
+    flex-direction: column;
+}
+
+.recherche__label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.recherche__champ, .recherche__selecteur {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.recherche__bouton {
+    padding: 15px;
+    background-color: #6731b3;
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.recherche__bouton:hover {
+    background-color: rgb(66, 48, 226);
+}
+
+
+/* Info section */
+.infos {
+    padding: 60px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.infos__titre {
+    font-size: 24px;
+    margin: 15px 0 10px;
+}
+
+.infos__text {
+    font-size: 16px;
+    color: #555;
+}
+
+/* pied de page */
+
+.pied-de-page {
+    background-color: #3a86ff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+
+.pied-de-page__lien-reseau {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.pied-de-page__lien-reseau:hover {
+    text-decoration: underline;
+}
