@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="public/css/styles.css">
     <link rel="stylesheet" href="public/css/responsive.css">
     <script src="public/js/autocomplete.js" defer></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSbbhf3uE49J5vqiClmNzkVjmEe7bMous&libraries=places"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSbbhf3uE49J5vqiClmNzkVjmEe7bMous&libraries=places" 
+    async defer></script>
 </head>
 <body>
     <?php include 'header.php'; ?>
