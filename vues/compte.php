@@ -14,7 +14,7 @@
 
     <main class="principal">
         <section class="compte">
-            <h1 class="compte__titre">Mon Compte</h1>
+            <h1 class="compte__titre">Bonjour <?= $utilisateur['nom']; ?></h1>
 
             <section class="compte__infos">
                 <h2>Informations personnelles</h2>

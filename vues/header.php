@@ -1,5 +1,5 @@
 <header class="entete">
-    <a href="index.html" class="entete__lien-titre">
+    <a href="/" class="entete__lien-titre">
         <img src="logo.png" alt="" class="entete__logo">
         <h1>CocoLaRochelle</h1>
     </a>

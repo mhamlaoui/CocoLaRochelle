@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="public/css/reset.css">
     <link rel="stylesheet" href="public/css/styles.css">
     <link rel="stylesheet" href="public/css/responsive.css">
+    <script src="public/js/autocomplete.js" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSbbhf3uE49J5vqiClmNzkVjmEe7bMous&libraries=places"></script>
 </head>
 <body>
     <?php include 'header.php'; ?>
@@ -18,7 +20,7 @@
             <form class="recherche__formulaire" action="/recherche-trajets" method="GET">
                 <fieldset class="recherche__groupe">
                     <label for="depart" class="recherche__label">Adresse de départ</label>
-                    <input type="text" id="depart" name="depart" class="recherche__champ" placeholder="Adresse de départ" value="La Rochelle" readonly>
+                    <input type="text" id="depart" name="depart" class="recherche__champ" placeholder="Adresse de départ" required>
                 </fieldset>
 
                 <fieldset class="recherche__groupe">
