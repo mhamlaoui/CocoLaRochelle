@@ -25,7 +25,7 @@
 
                 <fieldset class="recherche__groupe">
                     <label for="arrivee" class="recherche__label">Adresse d'arrivée</label>
-                    <input type="text" id="arrivee" name="arrivee" class="recherche__champ" placeholder="Adresse d'arrivée" required>
+                    <input type="text" id="destination" name="arrivee" class="recherche__champ" placeholder="Adresse d'arrivée" required>
                 </fieldset>
 
                 <fieldset class="recherche__groupe">
