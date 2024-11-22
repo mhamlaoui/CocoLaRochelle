@@ -1,7 +1,6 @@
-## Nom
-Coco La Rochelle
+# Coco La Rochelle
 
-Description
+## Description
 Ce projet est conçu dans le but de promouvoir le covoiturage à La Rochelle. Étant donné que tout ici est interconnecté et que la ville n'est pas trop grande, nous pensons que c'est un endroit idéal pour introduire davantage de covoiturage afin de réduire les émissions. Les habitants se rendent très probablement dans des lieux similaires, en particulier en ville.
 
 
