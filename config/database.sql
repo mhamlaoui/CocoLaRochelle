@@ -25,16 +25,6 @@ CREATE TABLE Trajet (
 );
 
 
--- Table reservations
-CREATE TABLE reservations (
-    id SERIAL PRIMARY KEY,
-    trajet_id INT,
-    passager_id INT,
-    date_reservation TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (trajet_id) REFERENCES trajets(id),
-    FOREIGN KEY (passager_id) REFERENCES Utilisateur(id)
-);
-
 
 -- Utilisateur 1
 INSERT INTO Utilisateur (nom, email, mot_de_passe, telephone)
