@@ -5,25 +5,29 @@ body {
 }
 
 
+
 img{
     max-width: 100%;
 }
 
 .entete {
-    background: linear-gradient(45deg, #4ba8c0, #5d2ba2);
+    background-color: #F8E517;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 3px;
 }
 
+.entete__logo{
+    width: 150px;
+    height: 150px;
+}
 
 .entete__lien-titre{
     display: flex;
     text-decoration: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 26px;
-
 }
 
 
@@ -41,8 +45,8 @@ img{
 
 .entete__lien {
     text-decoration: none;
-    color: white;
-    font-size: 16px;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
 }
 
 .principal {

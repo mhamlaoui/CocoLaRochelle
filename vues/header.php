@@ -1,6 +1,6 @@
 <header class="entete">
     <a href="/" class="entete__lien-titre">
-        <img src="logo.png" alt="" class="entete__logo">
+        <img src="../public/CoCo.png" alt="" class="entete__logo">
         <h1>CocoLaRochelle</h1>
     </a>
     <nav class="entete__navigation">
