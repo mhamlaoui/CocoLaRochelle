@@ -15,8 +15,10 @@ $request = $_SERVER['REQUEST_URI'];
 switch ($request) {
     case '/':
     case '/index.php':
+    case '/recherche-trajets':
+    case '/accueil':
         // Page d'accueil
-        include 'vues/accueil.php';
+        $TrajetControleur->rechercherTrajets();
         break;
 
     case '/inscription':
@@ -36,6 +38,9 @@ switch ($request) {
         break;
     case '/vos-trajets':
         $TrajetControleur->afficherTrajetsUtilisateur();
+        break;
+    case '/afficher-trajet':
+        $TrajetControleur->afficherTrajetsTrouves();
         break;
     default:
         // Page 404 pour les routes non trouvées

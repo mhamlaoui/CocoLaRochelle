@@ -6,6 +6,7 @@ $dsn = 'pgsql:host=localhost;dbname=COCO';
 $username = 'postgres';
 $password = '560';
 
+
 try {
     // Connexion PDO à la base de données
     $pdo = new PDO($dsn, $username, $password);

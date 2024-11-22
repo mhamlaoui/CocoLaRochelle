@@ -18,7 +18,7 @@
         <section class="recherche">
             <h1 class="recherche__titre">Trouvez un covoiturage depuis La Rochelle</h1>
             <p class="recherche__description">Réservez vos trajets en toute simplicité.</p>
-            <form class="recherche__formulaire" action="/recherche-trajets" method="GET">
+            <form class="recherche__formulaire" action="/recherche-trajets" method="POST">
                 <fieldset class="recherche__groupe">
                     <label for="depart" class="recherche__label">Adresse de départ</label>
                     <input type="text" id="depart" name="depart" class="recherche__champ" placeholder="Adresse de départ" required>
@@ -31,7 +31,7 @@
 
                 <fieldset class="recherche__groupe">
                     <label for="date" class="recherche__label">Date</label>
-                    <input type="date" id="date" name="date" class="recherche__champ" required>
+                    <input type="date" id="date" name="date_trajet" class="recherche__champ" required>
                 </fieldset>
 
                 <fieldset class="recherche__groupe">

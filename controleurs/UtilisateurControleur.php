@@ -55,7 +55,7 @@ class UtilisateurControleur {
             exit;
         }
 
-        $utilisateur = $this->utilisateurModèle->obtenirUtilisateurParId($_SESSION['utilisateur_id']);
+        $utilisateur = $this->utilisateurModèle->obtenirUtilisateurParId($_SESSION['id_utilisateur']);
         include 'vues/compte.php';
     }
 }

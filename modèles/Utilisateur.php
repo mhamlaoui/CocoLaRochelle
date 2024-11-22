@@ -8,18 +8,18 @@ class Utilisateur {
         $this->pdo = $pdo;
     }
 
-    public function obtenirUtilisateurParId($id_user) {
-        $requete = $this->pdo->prepare("SELECT * FROM Utilisateur WHERE id_user = :id_user");
-        $requete->execute([':id_user' => $id_user]);
+    public function obtenirUtilisateurParId($id_utilisateur) {
+        $requete = $this->pdo->prepare("SELECT * FROM Utilisateur WHERE id_utilisateur = :id_utilisateur");
+        $requete->execute([':id_utilisateur' => $id_utilisateur]);
         return $requete->fetch(PDO::FETCH_ASSOC);
     }
 
     public function inscription($nom_utilisateur, $email, $mot_de_passe, $telephone) {
         $motDePasseHash = password_hash($mot_de_passe, PASSWORD_DEFAULT);
-        $requete = $this->pdo->prepare("INSERT INTO Utilisateur (nom_utilisateur, email, mot_de_passe, telephone) VALUES (:nom_utilisateur, :email, :mot_de_passe, :telephone)");
+        $requete = $this->pdo->prepare("INSERT INTO Utilisateur (nom, email, mot_de_passe, telephone) VALUES (:nom, :email, :mot_de_passe, :telephone)");
 
         return $requete->execute([
-            ':nom_utilisateur' => $nom_utilisateur,
+            ':nom' => $nom_utilisateur,
             ':email' => $email,
             ':mot_de_passe' => $motDePasseHash,
             ':telephone' => $telephone
@@ -31,12 +31,12 @@ class Utilisateur {
         $utilisateur = $requete->fetch(PDO::FETCH_ASSOC);
 
         if ($utilisateur && password_verify($mot_de_passe, $utilisateur['mot_de_passe'])) {
-            $_SESSION['utilisateur_id'] = $utilisateur['id_user'];
+            $_SESSION['id_utilisateur'] = $utilisateur['id_utilisateur'];
 
             // Définir le cookie "Se souvenir de moi" si l'option est choisie
             if ($se_souvenir_de_moi) {
                 $dureeCookie = time() + (30 * 24 * 60 * 60);  
-                setcookie('utilisateur_id', $utilisateur['id_user'], $dureeCookie, "/", "", true, true);
+                setcookie('id_utilisateur', $utilisateur['id_utilisateur'], $dureeCookie, "/", "", true, true);
             }
                 return true;
         }
@@ -45,15 +45,15 @@ class Utilisateur {
 
     // Vérification automatique de la connexion via le cookie
     public function verifierConnexionAutomatique() {
-        if (isset($_COOKIE['utilisateur_connexion']) && !isset($_SESSION['utilisateur_id'])) {
+        if (isset($_COOKIE['utilisateur_connexion']) && !isset($_SESSION['id_utilisateur'])) {
             $idUtilisateur = $_COOKIE['utilisateur_connexion'];
 
-            $requete = $this->pdo->prepare("SELECT * FROM Utilisateur WHERE id_user = :id_user");
-            $requete->execute([':id_user' => $idUtilisateur]);
+            $requete = $this->pdo->prepare("SELECT * FROM Utilisateur WHERE id_utilisateur = :id_utilisateur");
+            $requete->execute([':id_utilisateur' => $idUtilisateur]);
             $utilisateur = $requete->fetch(PDO::FETCH_ASSOC);
 
             if ($utilisateur) {
-                $_SESSION['utilisateur_id'] = $utilisateur['id_user'];
+                $_SESSION['id_utilisateur'] = $utilisateur['id_utilisateur'];
                 return true;
             }
         }
@@ -65,7 +65,7 @@ class Utilisateur {
         session_destroy();
 
         // Supprimer le cookie en réglant sa durée d'expiration dans le passé
-        setcookie("utilisateur_id", "", time() - 3600, "/");
+        setcookie("id_utilisateur", "", time() - 3600, "/");
     }
 }
 

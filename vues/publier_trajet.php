@@ -24,7 +24,7 @@
             <input type="text" id="destination" name="destination" placeholder="Adresse d'arrivée" required>
 
             <label for="date">Date :</label>
-            <input type="date" id="date" name="date" required>
+            <input type="date" id="date" name="date_trajet" required>
 
             <label for="nombre_passagers">Nombre de passagers :</label>
             <input type="number" id="nombre_passagers" name="nombre_passagers" min="1" max="10" required>
