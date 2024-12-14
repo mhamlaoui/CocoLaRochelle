@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,29 +9,27 @@
     <link rel="stylesheet" href="public/css/connexion.css">
 </head>
 <body>
-    <main class="principal">
-        <section class="Log_In">
-            <h2>Connexion</h2>
-            <form method="POST">
-                <fieldset class="inscription__groupe">
-                    <label for="email" class="inscription__label">Email:</label>
-                    <input type="email" id="email" name="email" class="inscription__champ" required>
-                </fieldset>
-                
-                <fieldset class="inscription__groupe">
-                    <label for="mot_de_passe" class="inscription__label">Password:</label>
-                    <input type="password" id="mot_de_passe" name="mot_de_passe" class="inscription__champ" required>
-                </fieldset>
-                <fieldset class="inscription__groupe">
-                    <label for="se_souvenir_de_moi">
-                        <input type="checkbox" name="se_souvenir_de_moi" id="se_souvenir_de_moi"> Se souvenir de moi
-                    </label>
-                </fieldset>
-                <button type="submit" class="inscription__bouton">Connexion</button>
-            </form>
-        </section>
-    </main>
+    <main>
+        <form method="POST">
+            <h2>Se connecter</h2>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+            
+            <label for="motdepasse">Mot de passe</label>
+            <input type="password" id="mot_de_passe" name="mot_de_passe" placeholder="Entrez votre mot de passe" required>
+            
+            <label for="souvenir">
+            <input type="checkbox" id="se_souvenir_de_moi" name="se_souvenir_de_moi">
+            Se souvenir de moi
+            </label>
+            
+            <p class="error"><?= $error_message ? $error_message : ""; ?></p>
 
-    <?php include 'footer.php'; ?>
+            <button type="submit">Se connecter</button>
+
+            <a href="#" class="mot-de-passe-oublie">Mot de passe oublié ?</a>
+        </form>
+    </main>
 </body>
 </html>

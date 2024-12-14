@@ -13,7 +13,7 @@ class Utilisateur {
         $requete->execute([':id_utilisateur' => $id_utilisateur]);
         return $requete->fetch(PDO::FETCH_ASSOC);
     }
-
+//  A faire!!!!verifier si le meail ets deja dans la db 
     public function inscription($nom_utilisateur, $email, $mot_de_passe, $telephone) {
         $motDePasseHash = password_hash($mot_de_passe, PASSWORD_DEFAULT);
         $requete = $this->pdo->prepare("INSERT INTO Utilisateur (nom, email, mot_de_passe, telephone) VALUES (:nom, :email, :mot_de_passe, :telephone)");
@@ -33,7 +33,8 @@ class Utilisateur {
         if ($utilisateur && password_verify($mot_de_passe, $utilisateur['mot_de_passe'])) {
             $_SESSION['id_utilisateur'] = $utilisateur['id_utilisateur'];
 
-            // Définir le cookie "Se souvenir de moi" si l'option est choisie
+            // Définir le cookie "Se souvenir de moi" si l'option est choisie 
+            // amelioration possible utilisation de token 
             if ($se_souvenir_de_moi) {
                 $dureeCookie = time() + (30 * 24 * 60 * 60);  
                 setcookie('id_utilisateur', $utilisateur['id_utilisateur'], $dureeCookie, "/", "", true, true);

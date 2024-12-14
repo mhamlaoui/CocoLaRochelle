@@ -35,7 +35,7 @@ class UtilisateurControleur {
                 header('Location: /');
                 exit;
             }else {
-                echo '<p>Email ou mot de passe incorrect.</p>';
+                $error_message = "Adresse e-mail ou mot de passe incorrect.";
             }
         }
         include 'vues/connexion.php';

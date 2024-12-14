@@ -1,152 +1,228 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+font-family: 'Roboto', sans-serif;
+background-color: #f4f4f9;
+color: #333;
 }
 
 
-
-img{
-    max-width: 100%;
+a {
+text-decoration: none;
+color: inherit;
 }
 
+/* Header principal */
 .entete {
-    background-color: #F8E517;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 3px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: #FFD700; 
+padding: 10px 20px;
+position: relative; 
 }
 
-.entete__logo{
-    width: 150px;
-    height: 150px;
+/* Section gauche : logo et titre */
+.entete__lien-titre {
+display: flex;
+align-items: center;
+gap: 10px;
 }
 
-.entete__lien-titre{
-    display: flex;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-size: 26px;
+.entete__logo {
+height: 100px;
+width: auto;
 }
 
+.entete__titre {
+font-size: 1.8rem;
+font-weight: bold;
+color: black;
+}
 
+/* Section centre : Navigation */
+.entete__navigation {
+position: absolute;
+left: 50%; /* Centrer horizontalement par rapport au parent */
+transform: translateX(-50%); /* Ajuster pour que le centre du menu soit exactement au centre */
+display: flex;
+}
 
 .entete__liste {
-    display: flex;
-    justify-content: flex-end;
+display: flex;
+list-style: none;
+margin: 0;
 }
-
-
 
 .entete__item {
-    margin-right: 20px;
+margin: 0 8rem; /* Augmenter l'espace entre les éléments */
 }
 
+/* Bordure autour des liens de navigation */
 .entete__lien {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-size: 30px;
+font-size: 1.3rem;
+font-weight: bold;
+color: black;
+padding: 16px 26px;
+border: 3px solid black;
+border-radius: 25px;
+transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.principal {
-    text-align: center;
-    padding: 50px;
+.entete__lien:hover {
+background-color: black;
+color: white;
+border-color: white;
 }
 
-.recherche {
-    background-color: white;
-    border-radius: 10px;
-    padding: 30px;
-    width: 90%;
-    max-width: 600px;
-    margin: auto;
-    box-shadow:  10px 7px 7px rgba(13, 13, 13, 0.1);
+/* Icône du menu (Font Awesome) */
+.menu-icon {
+font-size: 24px;
+cursor: pointer;
+border: 2px solid black;
+padding: 6px 10px;
+border-radius: 50%;
+transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.recherche__titre {
-    font-size: 40px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
+.menu-icon:hover {
+background-color: black;
+color: white;
 }
 
-.recherche__description {
-    font-size: 16px;
-    margin-bottom: 20px;
+/* Menu caché au départ */
+.menu-connexion {
+display: none;
+font-size: 1.5rem;
+position: absolute;
+right: 20px;
+top: 80px;
+background-color: #ffffff;
+border-radius: 10px;
+padding: 10px;
+list-style: none;
+margin-top: 10px;
 }
 
-.recherche__formulaire {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+.menu-connexion li {
+padding: 8px 16px;
 }
 
-.recherche__groupe {
-    display: flex;
-    flex-direction: column;
+.menu-connexion a {
+color: black;
+text-decoration: none;
 }
 
-.recherche__label {
-    margin-bottom: 5px;
-    font-weight: bold;
+.menu-connexion a:hover {
+color: rgb(197, 232, 54);
 }
 
-.recherche__champ, .recherche__selecteur {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.recherche__bouton {
-    padding: 15px;
-    background-color: #6731b3;
-    color: white;
-    border: none;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.recherche__bouton:hover {
-    background-color: rgb(66, 48, 226);
+/* Lorsque le menu est ouvert, afficher le menu */
+.menu-connexion.active {
+display: block;
 }
 
 
-/* Info section */
-.infos {
-    padding: 60px;
-    background-color: #fff;
-    text-align: center;
+
+/* Pied de page */
+.pied-page {
+background-color: #000;
+color: #fff;
+padding: 40px;
+font-family: Arial, sans-serif;
 }
 
-.infos__titre {
-    font-size: 24px;
-    margin: 15px 0 10px;
+/* Sections principales */
+.pied-page__section {
+display: flex;
+justify-content: space-between;
+margin-bottom: 30px;
 }
 
-.infos__text {
-    font-size: 16px;
-    color: #555;
+/* Formulaire et contact */
+.pied-page__formulaire, .pied-page__contact {
+width: 48%;
 }
 
-/* pied de page */
+.pied-page__formulaire {
+background-color: #ffd600;
+padding: 20px;
+border-radius: 10px;
+}
 
-.pied-de-page {
-    background-color:  #3ab8f3;
-    color: white;
-    padding: 20px;
-    text-align: center;
+.pied-page__formulaire-titre {
+font-size: 14px;
+font-weight: bold;
+margin-bottom: 5px;
+}
+
+.pied-page__formulaire-etoile {
+color: red;
+}
+
+.pied-page__formulaire-champ, .pied-page__formulaire-zone {
+width: 95%;
+padding: 10px;
+margin-bottom: 10px;
+border: none;
+border-radius: 5px;
+}
+
+.pied-page__formulaire-zone {
+height: 70px;
+resize: none;
+}
+
+.pied-page__contact {
+text-align: center;
+}
+
+.pied-page__contact-titre {
+font-size: 36px;
+font-weight: bold;
+padding-bottom: 15px;
+}
+
+.pied-page__contact-texte {
+font-size: 30px;
+padding-bottom: 15px;
+}
+
+.pied-page__contact-mail {
+font-size: 30px;
+font-weight: bold;
+color: #ffd600;
+}
+
+/* À propos, Réseaux sociaux, et Informations légales */
+.pied-page__a-propos,
+.pied-page__reseaux,
+.pied-page__legales {
+width: 33%;
+text-align: center;
+}
+
+.pied-page__a-propos-titre,
+.pied-page__reseaux-titre,
+.pied-page__legales-titre {
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 5px;
 }
 
 
-.pied-de-page__lien-reseau {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 5px;
+
+.pied-page__reseaux-liste,
+.pied-page__legales-liste {
+list-style: none;
+padding: 0; 
 }
 
-.pied-de-page__lien-reseau:hover {
-    text-decoration: underline;
+.pied-page__reseaux-item,
+.pied-page__legales-item {
+margin-bottom: 5px;
+}
+
+.pied-page__reseaux-lien,
+.pied-page__legales-lien {
+color: #ffd600;
+text-decoration: none;
 }

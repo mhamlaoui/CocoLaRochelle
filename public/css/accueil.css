@@ -1,0 +1,137 @@
+
+/* Main formulaire*/
+
+.principale{
+display: flex;
+flex-direction: column;
+align-items: center; 
+background-image: url('../laRochelle.png');
+background-size: cover; 
+background-position: center;
+height: 65vh;
+}
+
+.principale__tritre{
+color: #fff;
+font-size: 2rem;
+text-align: center;
+text-transform: uppercase;
+font-weight: bold;
+padding-top: 6rem;
+}
+
+.formulaire-recherche {
+display: flex;
+gap: 40px;
+padding: 10px;
+border-radius: 8px;
+padding-top: 13rem;
+}
+
+label {
+display: flex;
+align-items: center;
+background: white;
+padding: 20px 40px;
+border: 1px solid #ddd;
+border-radius: 20px;
+box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+cursor: pointer;
+gap: 8px;
+font-size:  1.5rem;
+
+}
+
+label:hover {
+box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+}
+
+label input[type="text"] {
+border: none;
+accent-color: black; 
+font-size: 1.4rem; 
+cursor: pointer;
+}
+
+label span {
+font-weight: bold;
+margin-left: 8px;
+cursor: pointer;
+}
+
+input[type="date"],
+select {
+border: none;
+outline: none;
+font-size: 20px;
+margin-left: 8px;
+background: none;
+cursor: pointer;
+}
+
+
+
+.bouton-recherche {
+display: flex;
+align-items: center;
+justify-content: center;
+background: #ffd700;
+color: black;
+border: none;
+padding: 20px 40px;
+border-radius: 20px;
+font-weight: bold;
+cursor: pointer;
+gap: 8px;
+font-size:  1.5rem;
+}
+
+.bouton-recherche:hover {
+background: #f0c600;
+}
+
+/* Section des explications */
+.section-explications {
+display: flex;
+justify-content: space-around;
+border-top: 2px solid #575353;
+border-bottom: 2px solid #575353;
+padding: 80px 20px;
+margin: 90px 30px;
+}
+
+/* Article des explications */
+.explication {
+max-width: 450px;
+}
+
+/* Titre de chaque article d'explication */
+.explication__titre {
+font-size: 30px;
+text-decoration: underline;
+margin-bottom: 10px;
+}
+
+
+/* Élément individuel dans la liste */
+.explication__element {
+font-size: 24px;
+margin-bottom: 10px;
+}
+
+/* Modificateur pour mettre en valeur le texte en gras */
+.explication__element--gras {
+font-weight: bold;
+font-size: 26px;
+}
+
+/* icon couleur */
+.green-icon {
+color: green;
+font-size: 34px;
+}
+.cyan-icon {
+color: cyan;
+font-size: 34px;
+}
+
