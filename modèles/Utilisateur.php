@@ -32,6 +32,7 @@ class Utilisateur {
 
         if ($utilisateur && password_verify($mot_de_passe, $utilisateur['mot_de_passe'])) {
             $_SESSION['id_utilisateur'] = $utilisateur['id_utilisateur'];
+            $_SESSION['nom_utilisateur'] = $utilisateur['nom'];
 
             // Définir le cookie "Se souvenir de moi" si l'option est choisie 
             // amelioration possible utilisation de token 

@@ -20,11 +20,13 @@ class TrajetControleur {
             $depart = $_POST['depart'];
             $destination = $_POST['destination'];
             $date_trajet = $_POST['date_trajet'];
+            $heure_depart = $_POST['heure_depart'];
             $nombre_passagers = $_POST['nombre_passagers'];
             $id_utilisateur = $_SESSION['id_utilisateur'];
+            $nom_utilisateur = $_SESSION['nom_utilisateur'];
 
             // Enregistrer le trajet dans la base de données
-            $this->trajetModèle->ajouterTrajet($id_utilisateur, $depart, $destination, $date_trajet, $nombre_passagers);
+            $this->trajetModèle->ajouterTrajet($id_utilisateur,$nom_utilisateur, $depart, $destination, $date_trajet,$heure_depart, $nombre_passagers);
             header('Location: /vos-trajets');
             exit;
             }

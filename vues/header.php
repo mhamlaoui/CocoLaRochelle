@@ -24,7 +24,11 @@
   
     <!-- Menu déroulant -->
     <ul class="menu-connexion" id="menu-connexion">
-      <li><a href="/connexion">Se connecter</a></li>
-      <li><a href="/inscription">Inscription</a></li>
+      <?php if (isset($_SESSION['id_utilisateur'])): ?>
+        <li><a href="/compte">Compte</a></li>
+      <?php else: ?>
+        <li><a href="/connexion">Se connecter</a></li>
+        <li><a href="/inscription">Inscription</a></li>
+      <?php endif; ?>
     </ul>
   </header>
