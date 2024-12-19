@@ -8,33 +8,42 @@
     <link rel="stylesheet" href="public/css/reset.css">
     <link rel="stylesheet" href="public/css/styles.css">
     <link rel="stylesheet" href="public/css/responsive.css">
+    <link rel="stylesheet" href="public/css/compte.css">
+    <script src="public/js/menu.js" defer></script>
+    <script src="https://kit.fontawesome.com/3615041e3d.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <?php include 'header.php'; ?>
+    <?php require 'header.php'; ?>
 
-    <main class="principal">
-        <section class="compte">
-            <h1 class="compte__titre">Bonjour <?= $utilisateur['nom']; ?></h1>
-
-            <section class="compte__infos">
-                <h2>Informations personnelles</h2>
-                <p>Email : <?= $utilisateur['email']; ?></p>
-            </section>
-
-            <section class="compte__actions">
-                <h2>Gérer mon compte</h2>
-                <ul>
-                    <li><a href=".php" class="compte__lien">Modifier mes informations</a></li>
-                    <li><a href=".php" class="compte__lien">Changer mon mot de passe</a></li>
-                    <li><a href=".php" class="compte__lien compte__lien--danger">Supprimer mon compte</a></li>
-                </ul>
-                <form method="POST">
-                    <button type="submit" class="compte__bouton-deconnexion">Se déconnecter</button>
-                </form>
-            </section>
+    <main>
+        <section class="profil">
+            <img src="https://via.placeholder.com/150" alt="Photo de profil" class="profil__photo">
+            <h2 class="profil__titre"><?=$utilisateur["nom"]?></h2>
+            <p class="profil__champ">Email : <?=$utilisateur["email"]?></p>
+            <button class="profil__bouton"><i class="fas fa-edit"></i> Modifier mes informations</button>
         </section>
+
+        <!-- Section Gérer mon compte -->
+        <section class="compte__section">
+            <h2 class="compte__titre">Gérer mon compte</h2>
+            <ul class="compte__liste">
+                <li class="compte__item">
+                    <a href="changer-mdp.php" class="compte__lien"><i class="fas fa-key"></i> Changer mon mot de passe</a>
+                </li>
+                <li class="compte__item">
+                    <a href="supprimer-compte.php" class="compte__lien compte__lien--danger">
+                        <i class="fas fa-trash-alt"></i> Supprimer mon compte
+                    </a>
+                </li>
+            </ul>
+            <form method="POST">
+                <button type="submit" class="compte__bouton-deconnexion">
+                    <i class="fas fa-sign-out-alt"></i> Se déconnecter
+                </button>
+            </form>
+    </section>
     </main>
 
-    <?php include 'footer.php'; ?>
+    <?php require 'footer.php'; ?>
 </body>
 </html>

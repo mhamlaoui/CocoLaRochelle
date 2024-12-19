@@ -1,6 +1,6 @@
 <?php
 
-class Trajet {
+class TrajetModel {
     private $pdo;
 
     public function __construct($pdo) {

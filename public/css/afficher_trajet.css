@@ -81,59 +81,6 @@ font-size:  1.5rem;
 background: #f0c600;
 }
 
-/* Section des explications */
-.section-explications {
-display: flex;
-justify-content: space-around;
-border-top: 2px solid #575353;
-border-bottom: 2px solid #575353;
-padding: 80px 20px;
-margin: 90px 30px;
-}
-
-/* Article des explications */
-.explication {
-max-width: 450px;
-}
-
-/* Titre de chaque article d'explication */
-.explication__titre {
-font-size: 30px;
-text-decoration: underline;
-margin-bottom: 10px;
-}
-
-
-/* Élément individuel dans la liste */
-.explication__element {
-font-size: 24px;
-margin-bottom: 10px;
-}
-
-/* Modificateur pour mettre en valeur le texte en gras */
-.explication__element--gras {
-font-weight: bold;
-font-size: 26px;
-}
-
-/* icon couleur */
-.green-icon {
-color: green;
-font-size: 34px;
-}
-
-.cyan-icon {
-color: cyan;
-font-size: 34px;
-}
-
-
-h1 {
-text-align: center;
-font-size: 2.5em;
-color: #00796b;
-margin-bottom: 30px;
-}
 
 /* Carte de trajet */
 .trajet-card {
@@ -142,7 +89,7 @@ border-radius: 12px;
 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 padding: 20px;
 transition: transform 0.3s ease, box-shadow 0.3s ease;
-margin-bottom: 30px;
+margin: 30px 100px;
 }
 
 .trajet-card:hover {

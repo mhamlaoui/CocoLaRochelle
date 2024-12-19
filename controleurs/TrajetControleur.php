@@ -1,12 +1,16 @@
 <?php
 
-require_once 'modèles/Trajet.php';
+require_once 'modèles/TrajetModel.php';
+require_once 'modèles/ReservationModel.php';
+
 
 class TrajetControleur {
     private $trajetModèle;
+    private $reservatioModèle;
 
     public function __construct($pdo) {
-        $this->trajetModèle = new Trajet($pdo);
+        $this->trajetModèle = new TrajetModel($pdo);
+        $this->reservatioModèle = new ReservationModel($pdo);
     }
 
     public function publierTrajet() {
@@ -41,7 +45,8 @@ class TrajetControleur {
         }
 
         $id_utilisateur = $_SESSION['id_utilisateur'];
-        $trajets = $this->trajetModèle->obtenirTrajetsParUtilisateur($id_utilisateur);
+        $trajetsPublier = $this->trajetModèle->obtenirTrajetsParUtilisateur($id_utilisateur);
+        $trajetsReserver = $this->reservatioModèle->obtenirTrajetsReservesParUtilisateur($id_utilisateur);
         
         include 'vues/trajets_utilisateur.php';
     }
@@ -70,6 +75,38 @@ class TrajetControleur {
             // Si aucun trajet n'est disponible, rediriger vers la page d'accueil
             header('Location: /accueil');
             exit;
+        }
+    }
+
+    public function reserverTrajet() {
+        if (!isset($_SESSION['id_utilisateur'])){
+            header('Location: /connexion');
+            exit;
+        }
+ 
+        if (isset($_POST['trajet_id'])) {
+            $idTrajet = $_POST['trajet_id'];
+            $id_utilisateur = $_SESSION['id_utilisateur'];
+            try {
+                // Vérifier si l'utilisateur a déjà réservé ce trajet
+                if ($this->reservatioModèle->verifierReservationExiste($id_utilisateur, $idTrajet)) {
+                    throw new Exception("Vous avez déjà réservé ce trajet.");
+                }
+
+                // Ajouter la réservation
+                $this->reservatioModèle->ajouterReservation($id_utilisateur, $idTrajet);
+
+                // Mettre à jour les places disponibles!!!!!!!
+
+                // Rediriger vers la page de vos trajets
+                header('Location: /vos-trajets');
+                exit;
+
+            } catch (Exception $e) {
+                // Si une exception se produit (par exemple, déjà réservé), afficher un message d'erreur
+                $message = $e->getMessage();
+                include 'vues/afficher_trajet.php'; // Vous pouvez afficher un message d'erreur ici
+            }
         }
     }
 }

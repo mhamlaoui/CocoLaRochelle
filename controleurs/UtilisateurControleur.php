@@ -1,13 +1,13 @@
 <?php
 // contrôleurs/UtilisateurControleur.php
 
-require_once 'modèles/Utilisateur.php';
+require_once 'modèles/UtilisateurModel.php';
 
 class UtilisateurControleur {
     private $utilisateurModèle;
 
     public function __construct($pdo) {
-        $this->utilisateurModèle = new Utilisateur($pdo);
+        $this->utilisateurModèle = new UtilisateurModel($pdo);
     }
 
     public function inscription() {

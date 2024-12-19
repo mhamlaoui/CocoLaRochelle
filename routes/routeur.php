@@ -42,9 +42,12 @@ switch ($request) {
     case '/afficher-trajet':
         $TrajetControleur->afficherTrajetsTrouves();
         break;
+    case '/reserver-trajet':
+        $TrajetControleur->reserverTrajet();
+        break;
     default:
         // Page 404 pour les routes non trouvées
-        http_response_code(404);
-        echo "Page non trouvée.";
+        header('Location: vues/404.php');
+        exit();
         break;
 }

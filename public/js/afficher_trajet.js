@@ -1,3 +1,4 @@
+
 // Initialiser la carte et la centrer sur La Rochelle
 var map = L.map('map').setView([46.1603, -1.1511], 13);  // Centrée sur La Rochelle
 
@@ -42,15 +43,25 @@ function reinitialiserCarte() {
 }
 
 // Rechercher les deux adresses avec Nominatim API
-document.getElementById('search-button').addEventListener('click', function () {
-    var adresseDepart = document.getElementById('start-input').value;
-    var adresseArrivee = document.getElementById('end-input').value;
+document.querySelectorAll('.tajet-btn').forEach(function (button) {
+    button.addEventListener('click', function () {
+    var trajetId = this.getAttribute('data-id-trajet');
 
-    if (!adresseDepart || !adresseArrivee) {
-        alert("Veuillez entrer les adresses de départ et d'arrivée.");
-        return;
-    }
+    console.log("ID du trajet:", trajetId);
+    // Récupérer les adresses pour ce trajet spécifique
+    var adresseDepart = document.querySelector(`[data-id-trajet="${trajetId}"][data-type="start"]`).textContent;
+    var adresseArrivee = document.querySelector(`[data-id-trajet="${trajetId}"][data-type="end"]`).textContent;
 
+    console.log(adresseArrivee)
+    console.log(adresseDepart)
+    
+    // Vérifier si l'adresse commence par un chiffre
+    if (isNaN(adresseDepart[0])) {
+        adresseDepart = adresseDepart.split(',')[0]; 
+    } 
+    if (isNaN(adresseArrivee[0])) {
+        adresseArrivee = adresseArrivee.split(',')[0];
+    } 
     // Réinitialiser les éléments sur la carte
     reinitialiserCarte();
 
@@ -91,5 +102,6 @@ document.getElementById('search-button').addEventListener('click', function () {
         .catch(error => {
             console.error("Erreur lors de la recherche des adresses :", error);
         });
+    });
 });
  
