@@ -2,7 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
+    <title>CocoLaRochelle</title>
+    <link rel="icon" href="public/COCO.png" type="image/png"> 
     <link rel="stylesheet" href="public/css/reset.css">
     <link rel="stylesheet" href="public/css/styles.css">
     <link rel="stylesheet" href="public/css/responsive.css">

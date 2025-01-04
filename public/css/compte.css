@@ -1,3 +1,12 @@
+.notification__message {
+    color: #388e3c; 
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2rem;
+    display: block;
+}
+
 /* Section Profil */
 .profil {
     margin: 40px auto;
@@ -85,18 +94,24 @@
     text-decoration: none;
     transition: color 0.3s ease, transform 0.2s ease;
 }
-
 .compte__lien:hover {
-    color: #ffd700;
-    transform: translateX(10px);
+    color: #e6c200;
+    transform:scale(1.1);;
 }
 
-.compte__lien--danger {
+.compte__bouton-danger {
     color: #d9534f;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.compte__lien--danger:hover {
+
+.compte__bouton-danger:hover {
     color: #c9302c;
+    transform: translateY(-3px);
 }
 
 .compte__bouton-deconnexion {

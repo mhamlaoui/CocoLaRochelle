@@ -11,7 +11,12 @@ L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
 // Références pour les marqueurs et la ligne tracée
 var markers = [];
 var line = null;
-
+function scrollToMap() {
+    const mapSection = document.getElementById('map');
+    if (mapSection) {
+        mapSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
 // Fonction pour ajouter un marqueur avec un nom
 function ajouterPoint(latitude, longitude, nomPoint) {
     var marker = L.marker([latitude, longitude]).addTo(map).bindPopup(nomPoint).openPopup();
@@ -102,6 +107,7 @@ document.querySelectorAll('.tajet-btn').forEach(function (button) {
         .catch(error => {
             console.error("Erreur lors de la recherche des adresses :", error);
         });
+    scrollToMap();
     });
 });
  

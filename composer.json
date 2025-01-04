@@ -1,16 +1,15 @@
 {
     "name": "pirate-roberts/covoituragelarochelle",
-    "description": "A project for carpooling in La Rochelle",
+    "description": "Un project de covoiturage à La Rochelle",
     "require": {
         "php": ">=7.4",
         "vlucas/phpdotenv": "^5.6",
-        "auth0/auth0-php": "^8.11",
-        "nyholm/psr7": "^1.8",
         "steampixel/simple-php-router": "^0.7.1"
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "Controleurs\\": "controleurs/",
+            "Modeles\\": "modèles/"
         }
     },
     "config": {

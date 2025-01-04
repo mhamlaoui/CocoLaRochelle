@@ -28,7 +28,7 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 background-color: #FFD700; 
-padding: 10px 20px;
+padding: 1rem 2rem 1rem 0;
 position: relative;
 }
 
@@ -36,7 +36,7 @@ position: relative;
 .entete__lien-titre {
 display: flex;
 align-items: center;
-gap: 10px;
+gap: 1rem;
 }
 
 .entete__logo {
@@ -61,11 +61,10 @@ display: flex;
 .entete__liste {
 display: flex;
 list-style: none;
-margin: 0;
 }
 
 .entete__item {
-margin: 0 8rem; /* Augmenter l'espace entre les éléments */
+margin: 0 5rem; /* Augmenter l'espace entre les éléments */
 }
 
 /* Bordure autour des liens de navigation */
@@ -145,6 +144,7 @@ font-family: Arial, sans-serif;
 /* Sections principales */
 .pied-page__section {
 display: flex;
+flex-wrap: wrap;
 justify-content: space-between;
 margin-bottom: 30px;
 }
@@ -204,7 +204,6 @@ font-weight: bold;
 color: #ffd600;
 }
 
-/* À propos, Réseaux sociaux, et Informations légales */
 .pied-page__a-propos,
 .pied-page__reseaux,
 .pied-page__legales {

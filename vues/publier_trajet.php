@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publier un Trajet - La Rochelle</title>
-
+    <title>Publier un Trajet - CocoLaRochelle</title>
+    <link rel="icon" href="public/COCO.png" type="image/png">
     <link rel="stylesheet" href="public/css/reset.css">
     <link rel="stylesheet" href="public/css/styles.css">
     <link rel="stylesheet" href="public/css/publier.css">
     <link rel="stylesheet" href="public/css/responsive.css">
     <script src="public/js/autocomplete.js" defer></script>
     <script src="public/js/menu.js" defer></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSbbhf3uE49J5vqiClmNzkVjmEe7bMous&libraries=places" 
+    <script src="https://maps.googleapis.com/maps/api/js?key=<?=$_ENV['GOOGLE_MAPS_API_KEY']?>&libraries=places" 
     async defer></script>
-    <script src="https://kit.fontawesome.com/3615041e3d.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/<?=$_ENV['FONTAWESOME_TOKEN']?>.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <?php require 'header.php'; ?>
@@ -71,14 +71,6 @@
             </select>
         </fieldset>
 
-        <!-- Description supplémentaire -->
-        <fieldset class="formulaire__fieldset">
-            <legend class="formulaire__legend">Description</legend>
-            <label class="formulaire__label" for="description">
-                <i class="fas fa-info-circle"></i>Description (optionnel)
-            </label>
-            <textarea class="formulaire__textarea" id="description" name="description" placeholder="Exemple : Climatisation, musique, pause café..."></textarea>
-        </fieldset>
 
         <!-- Bouton d'envoi -->
         <button class="formulaire__bouton" type="submit">

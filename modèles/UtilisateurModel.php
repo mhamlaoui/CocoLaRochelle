@@ -1,5 +1,7 @@
 <?php
+NAMESPACE Modeles;
 
+use PDO;
 class UtilisateurModel {
     private $pdo;
 
@@ -12,8 +14,10 @@ class UtilisateurModel {
         $requete->execute([':id_utilisateur' => $id_utilisateur]);
         return $requete->fetch(PDO::FETCH_ASSOC);
     }
-//  A faire!!!!verifier si le meail ets deja dans la db 
     public function inscription($nom_utilisateur, $email, $mot_de_passe, $telephone) {
+        if($this->dejaDansLaBaseDeDonnees($email)){
+            return false;
+        }
         $motDePasseHash = password_hash($mot_de_passe, PASSWORD_DEFAULT);
         $requete = $this->pdo->prepare("INSERT INTO Utilisateur (nom, email, mot_de_passe, telephone) VALUES (:nom, :email, :mot_de_passe, :telephone)");
 
@@ -67,6 +71,43 @@ class UtilisateurModel {
 
         // Supprimer le cookie en réglant sa durée d'expiration dans le passé
         setcookie("id_utilisateur", "", time() - 3600, "/");
+    }
+
+    public function supprimerUtilisateur($id_utilisateur)
+    {
+        $requete = $this->pdo->prepare("DELETE FROM Utilisateur WHERE id_utilisateur = :id_utilisateur");
+        return $requete->execute([':id_utilisateur' => $id_utilisateur]);
+    }
+
+
+    public function dejaDansLaBaseDeDonnees($email)
+    {
+        $requete = $this->pdo->prepare("SELECT COUNT(*) FROM Utilisateur WHERE email = :email");
+        $requete->execute([':email' => $email]);
+        return $requete->fetchColumn() > 0;
+    }
+    public function verifierMotDePasse($id_utilisateur, $motDePasseActuel)
+    {
+        $requete = $this->pdo->prepare("SELECT * FROM Utilisateur WHERE id_utilisateur = :id_utilisateur");
+        $requete->execute([':id_utilisateur' => $id_utilisateur]);
+        $resultat = $requete->fetch(PDO::FETCH_ASSOC);
+        return password_verify($motDePasseActuel, $resultat['mot_de_passe']);
+
+    }
+    public function mettreAJourMotDePasse($id_utilisateur, $nouveauMotDePasse)
+    {
+        $motDePasseHash = password_hash($nouveauMotDePasse, PASSWORD_DEFAULT);
+        $requete = $this->pdo->prepare("UPDATE Utilisateur SET mot_de_passe = :mot_de_passe WHERE id_utilisateur = :id_utilisateur");
+        return $requete->execute([':mot_de_passe' => $motDePasseHash, ':id_utilisateur' => $id_utilisateur]);
+    }
+    public function modifierInformations($id_utilisateur, $nom, $email, $telephone) {
+        $requete = $this->pdo->prepare("UPDATE Utilisateur SET nom = :nom, email = :email, telephone = :telephone WHERE id_utilisateur = :id_utilisateur");
+        return $requete->execute([
+            ':id_utilisateur' => $id_utilisateur,
+            ':nom' => $nom,
+            ':email' => $email,
+            ':telephone' => $telephone
+        ]);
     }
 }
 

@@ -1,5 +1,7 @@
 <?php
+NAMESPACE Modeles;
 
+use PDO;
 class TrajetModel {
     private $pdo;
 

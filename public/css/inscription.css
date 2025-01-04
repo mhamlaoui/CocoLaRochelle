@@ -2,7 +2,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;  
+    height: 100vh;
 }
 
 form {
@@ -21,6 +21,18 @@ h2 {
     color: #333;
     margin-bottom: 20px;
     font-weight: bold;
+    animation: slideIn 1s ease-out;
+}
+/* Animation du titre */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 /* Style pour les étiquettes des champs */

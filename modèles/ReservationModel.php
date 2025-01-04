@@ -1,5 +1,8 @@
 <?php
 
+NAMESPACE Modeles;
+
+use PDO;
 class ReservationModel {
     private $pdo;
 

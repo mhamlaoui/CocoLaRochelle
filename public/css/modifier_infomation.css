@@ -1,0 +1,87 @@
+/* Section Profil */
+.profil {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre */
+.profil__titre {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Formulaire de modification */
+.profil__formulaire {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Label */
+.profil__label {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+/* Input (général) */
+.profil__input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease;
+}
+
+/* Changement de bordure au focus */
+.profil__input:focus {
+    border-color: #ffd700;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Info texte pour la photo */
+.profil__info {
+    font-size: 0.9rem;
+    color: #777;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+/* Bouton */
+.profil__bouton {
+    padding: 12px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #ffd700; /* Jaune de ton site */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.profil__bouton:hover {
+    background-color: #f0c600;
+}
+
+.profil__bouton:active {
+    background-color: #e1b200;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}

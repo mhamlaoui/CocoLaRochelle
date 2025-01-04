@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CocoLaRochelle</title>
+    <link rel="icon" href="public/COCO.png" type="image/png"> 
     <link rel="stylesheet" href="public/css/reset.css">
     <link rel="stylesheet" href="public/css/styles.css">
     <link rel="stylesheet" href="public/css/accueil.css">
     <link rel="stylesheet" href="public/css/responsive.css">
     <script src="public/js/autocomplete.js" defer></script>
     <script src="public/js/menu.js" defer></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSbbhf3uE49J5vqiClmNzkVjmEe7bMous&libraries=places" 
+    <script src="https://maps.googleapis.com/maps/api/js?key=<?=$_ENV['GOOGLE_MAPS_API_KEY']?>&libraries=places" 
     async defer></script>
-    <script src="https://kit.fontawesome.com/3615041e3d.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/<?=$_ENV['FONTAWESOME_TOKEN']?>.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <?php require 'header.php'; ?>
 
     <main class="principale">
     <h1 class="principale__tritre">La Rochelle à quelques pas</h1>
-    <form class="formulaire-recherche" method="POST">
+    <form class="formulaire-recherche" action="/recherche-trajets" method="POST">
       <label>
           <input type="text" id="depart" placeholder="Adresse de départ" name="depart" required>
       </label>

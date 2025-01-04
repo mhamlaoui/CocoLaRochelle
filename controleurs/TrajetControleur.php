@@ -1,7 +1,8 @@
 <?php
+namespace Controleurs;
 
-require_once 'modèles/TrajetModel.php';
-require_once 'modèles/ReservationModel.php';
+use Modeles\TrajetModel;
+use Modeles\ReservationModel;
 
 
 class TrajetControleur {
@@ -11,6 +12,9 @@ class TrajetControleur {
     public function __construct($pdo) {
         $this->trajetModèle = new TrajetModel($pdo);
         $this->reservatioModèle = new ReservationModel($pdo);
+    }
+    public function afficherFormulairePublication() {
+        include 'vues/publier_trajet.php';
     }
 
     public function publierTrajet() {
@@ -29,12 +33,10 @@ class TrajetControleur {
             $id_utilisateur = $_SESSION['id_utilisateur'];
             $nom_utilisateur = $_SESSION['nom_utilisateur'];
 
-            // Enregistrer le trajet dans la base de données
             $this->trajetModèle->ajouterTrajet($id_utilisateur,$nom_utilisateur, $depart, $destination, $date_trajet,$heure_depart, $nombre_passagers);
             header('Location: /vos-trajets');
             exit;
             }
-        include 'vues/publier_trajet.php';
     }
     public function afficherTrajetsUtilisateur() {
         
@@ -42,6 +44,12 @@ class TrajetControleur {
         if (!isset($_SESSION['id_utilisateur'])) {
             header('Location: /connexion');
             exit;
+        }
+        elseif(isset($_GET['action']) && $_GET['action'] === 'annuler_reservation'){
+            $id_trajet = $_GET['id_trajet'];
+            $id_utilisateur = $_SESSION['id_utilisateur'];
+            $this->reservatioModèle->supprimerReservation($id_utilisateur,$id_trajet);
+            $message = "Votre reservation a été annulé avec succès!";
         }
 
         $id_utilisateur = $_SESSION['id_utilisateur'];
@@ -66,13 +74,10 @@ class TrajetControleur {
     public function afficherTrajetsTrouves() {
         // Vérifier si des trajets sont stockés dans la session
         if (isset($_SESSION['trajets'])) {
-            // Récupérer les trajets depuis la session
             $trajets = $_SESSION['trajets'];
     
-            // Afficher les trajets
             include 'vues/afficher_trajet.php';
         } else {
-            // Si aucun trajet n'est disponible, rediriger vers la page d'accueil
             header('Location: /accueil');
             exit;
         }
@@ -83,29 +88,23 @@ class TrajetControleur {
             header('Location: /connexion');
             exit;
         }
- 
         if (isset($_POST['trajet_id'])) {
             $idTrajet = $_POST['trajet_id'];
             $id_utilisateur = $_SESSION['id_utilisateur'];
             try {
-                // Vérifier si l'utilisateur a déjà réservé ce trajet
                 if ($this->reservatioModèle->verifierReservationExiste($id_utilisateur, $idTrajet)) {
                     throw new Exception("Vous avez déjà réservé ce trajet.");
                 }
 
-                // Ajouter la réservation
                 $this->reservatioModèle->ajouterReservation($id_utilisateur, $idTrajet);
 
-                // Mettre à jour les places disponibles!!!!!!!
 
-                // Rediriger vers la page de vos trajets
                 header('Location: /vos-trajets');
                 exit;
 
             } catch (Exception $e) {
-                // Si une exception se produit (par exemple, déjà réservé), afficher un message d'erreur
                 $message = $e->getMessage();
-                include 'vues/afficher_trajet.php'; // Vous pouvez afficher un message d'erreur ici
+                include 'vues/afficher_trajet.php'; 
             }
         }
     }
