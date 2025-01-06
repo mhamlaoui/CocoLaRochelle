@@ -19,7 +19,7 @@
     <section class="profil">
         <h2 class="profil__titre">Modifier mes informations</h2>
 
-        <!-- Formulaire de modification -->
+    
         <form method="POST" enctype="multipart/form-data" class="profil__formulaire">
 
             <!-- Photo de profil -->
@@ -36,7 +36,7 @@
             <input type="email" id="email" name="email" value="<?= $utilisateur['email'] ?>" required class="profil__input">
 
             <label for="telephone" class="profil__label">Numéro de téléphone</label>
-            <input type="tel" id="telephone" name="telephone" value="<?= $utilisateur['telephone'] ?>" class="profil__input" pattern="[0-9]{10}" placeholder="Ex : 0123456789" required>
+            <input type="tel" id="telephone" name="telephone" value="<?= $utilisateur['telephone'] ?>" class="profil__input" pattern="[0-9]{10}" placeholder="Ex : 0123456789">
             <p class="profil__info">Entrez un numéro valide (10 chiffres, sans espaces ni tirets).</p>
 
             <p class="error"><?= $error_message ? $error_message : ""; ?></p>

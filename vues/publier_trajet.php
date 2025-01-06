@@ -20,8 +20,6 @@
     <main>
     <h1 class="titre">Publier un Nouveau Trajet</h1>
     <form class="formulaire" id="formulaire-trajet" action="#" method="POST">
-        <!-- Titre -->
-
         <!-- Informations générales -->
         <fieldset class="formulaire__fieldset">
             <legend class="formulaire__legend">Informations du trajet</legend>
@@ -29,13 +27,13 @@
             <label class="formulaire__label" for="depart">
                 <i class="fas fa-map-marker-alt"></i>Lieu de départ
             </label>
-            <input class="formulaire__champ" type="text" id="depart" name="depart" placeholder="Exemple : Paris Gare de Lyon" required>
+            <input class="formulaire__champ" type="text" id="depart" name="depart" placeholder="Exemple : Aéroport de La Rochelle-Île de Ré" required>
             <span class="formulaire__erreur" id="erreur-depart">Veuillez entrer un lieu de départ valide.</span>
 
             <label class="formulaire__label" for="destination">
                 <i class="fas fa-map-marker-alt"></i>Lieu de destination
             </label>
-            <input class="formulaire__champ" type="text" id="destination" name="destination" placeholder="Exemple : Marseille Saint-Charles" required>
+            <input class="formulaire__champ" type="text" id="destination" name="destination" placeholder="Exemple : Decathlon La Rochelle Puilboreau" required>
             <span class="formulaire__erreur" id="erreur-destination">Veuillez entrer une destination valide.</span>
         </fieldset>
 

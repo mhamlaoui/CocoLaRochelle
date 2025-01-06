@@ -107,21 +107,39 @@ class UtilisateurControleur {
         include 'vues/modifer_informations.php'; 
     }
     public function modifierInformations() {
-        // Vérification de la soumission du formulaire de modification
         if (isset($_POST['modifier_informations'])) {
             $nom = $_POST['nom'];
             $email = $_POST['email'];
-            $telephone=$_POST['telephone'];
-            $updated = $this->utilisateurModèle->modifierInformations($_SESSION['id_utilisateur'], $nom, $email,$telephone);
+            $telephone = $_POST['telephone'];
+            $photo_profil = null;
+    
+    
+            if (isset($_FILES['photo_profil']) && $_FILES['photo_profil']['error'] === UPLOAD_ERR_OK) {
+                $dossierUpload = 'public/uploads/'; 
+                $nomFichier = uniqid() . '_' . basename($_FILES['photo_profil']['name']);
+                $cheminFichier = $dossierUpload . $nomFichier;
+    
+                if (move_uploaded_file($_FILES['photo_profil']['tmp_name'], $cheminFichier)) {
+                    $photo_profil = 'uploads/' . $nomFichier;
+                }
+            }
+                $updated = $this->utilisateurModèle->modifierInformations(
+                $_SESSION['id_utilisateur'], 
+                $nom, 
+                $email, 
+                $telephone, 
+                $photo_profil
+            );
+    
             if ($updated) {
                 header("Location: /compte?success=informations_mise_a_jour");
                 exit;
             } else {
-                $error_message = "Une erreur est survenue lors de la mise à jour de vos informations.";
+                $error_message = "Erreur lors de la mise à jour.";
             }
         }
         $utilisateur = $this->utilisateurModèle->obtenirUtilisateurParId($_SESSION['id_utilisateur']);
         include 'vues/modifer_informations.php';
     }
-}
+}    
 

@@ -1,6 +1,6 @@
 # CocoLaRochelle
 
-**CocoLaRochelle** est une plateforme de covoiturage locale conçue spécifiquement pour les habitants de La Rochelle. Le projet vise à offrir une solution économique, écologique et communautaire pour les déplacements urbains et régionaux.
+**CocoLaRochelle** est une plateforme de covoiturage locale conçue spécifiquement pour les habitants de La Rochelle. Le projet vise à offrir une solution pour les déplacements sur la commune de La Rochelle.
 
 ---
 
@@ -9,9 +9,6 @@
 - **Recherche de trajets** : Trouvez rapidement des trajets en covoiturage en fonction de votre point de départ, de votre destination et de la date.
 - **Publication de trajets** : Proposez vos trajets pour aider les autres et réduire vos coûts de déplacement.
 - **Profil utilisateur** : Gérez vos informations, modifiez votre mot de passe et consultez vos trajets publiés.
-- **Sécurité renforcée** :
-  - Avis et évaluations pour assurer la confiance entre utilisateurs.
-  - Messagerie intégrée pour faciliter la communication.
 - **Communauté locale** : Connectez-vous avec les habitants de La Rochelle partageant les mêmes trajets.
 
 ---
@@ -23,15 +20,15 @@
 - **PHP** >= 7.4.
 - **Composer** (gestionnaire de dépendances PHP).
 - Serveur web.
-- Une base de données PostgreSQL.
+- Une base de données.
 
 ### Étapes d'installation
 
 1. **Cloner le projet** :
 
    ```
-   git clone https://gitlab.com/covoituragelarochelle.git
-   cd covoituragelarochelle
+   git clone https://gitlab.univ-lr.fr/projets-l2-2024/lesgentlemen/cocolarochelle.git
+   cd cocolarochelle
    ```
 
 2. **Installer les dépendances** :
@@ -44,7 +41,8 @@
 
    - Dupliquez le fichier `.env.example` et renommez-le `.env`.
    - Renseignez les valeurs de configuration, par exemple :
-     ```
+
+     ```env
      DB_CONNECTION=pgsql
      DB_HOST=localhost
      DB_NAME=covoiturage
@@ -56,11 +54,11 @@
 
 4. **Initialiser la base de données** :
 
-   - Importez le fichier `config/database.sql` dans votre base de données MySQL pour créer les tables nécessaires.
+   - Importez le fichier `config/database.sql` dans votre base de données PostgreSQL pour créer les tables nécessaires.
 
 5. **Lancer le projet en local** (serveur PHP intégré) :
 
-   ```
+   ```bash
    php -S localhost:8000 -t public
    ```
 
@@ -72,12 +70,12 @@
 
 ## Dépendances
 
-Voici les bibliothèques utilisées dans ce projet :
+Voici les bibliothèques et outils utilisés dans ce projet :
 
 - [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv) : Gestion des variables d'environnement.
 - [steampixel/simple-php-router](https://github.com/steampixel/simplePHPRouter) : Routeur léger et flexible.
 - [Leaflet.js](https://leafletjs.com/) : Affichage de cartes interactives.
-- [FontAwesome](https://fontawesome.com/) : Icônes pour améliorer l'interface utilisateur. (nécessite un token spécifique).
+- [FontAwesome](https://fontawesome.com/) : Icônes modernes et fonctionnellesd.
 - [Google Places API](https://developers.google.com/maps/documentation/places/web-service/overview) : Autocomplétion des adresses pour les formulaires.
 
 ---
@@ -91,11 +89,11 @@ Voici les bibliothèques utilisées dans ce projet :
 - **`vues/`** : Contient les fichiers HTML et PHP pour les interfaces utilisateur.
 - **`public/`** : Contient les fichiers accessibles publiquement, comme les CSS, JS et les images.
 - **`config/`** : Contient les fichiers de configuration de l'application.
-- **`routes/`** : Contient le fichiers de définition des routes pour l'application.
+- **`routes/`** : Contient les fichiers de définition des routes pour l'application.
 
 ### Chargement automatique PSR-4
 
-Le projet utilise **PSR-4** pour le chargement automatique des classes, configuré dans `composer.json`. Cette approche permet une organisation claire des fichiers et une inclusion automatique en fonction des namespaces
+Le projet utilise **PSR-4** pour le chargement automatique des classes, configuré dans `composer.json`. Cette approche permet une organisation des fichiers et une automatisation en fonction des namespaces.
 
 ---
 
@@ -103,21 +101,23 @@ Le projet utilise **PSR-4** pour le chargement automatique des classes, configur
 
 ### Frontend
 
-- **HTML5** et **CSS3** : Utilisés pour la structure et le style des pages web.
-- **Responsive design** : Mise en page adaptative via le fichier `responsive.css`.
-- **Leaflet.js** : Gestion des cartes interactives pour afficher les trajets.
-- **FontAwesome** : Utilisé pour inclure des icônes modernes et intuitives.
-- **Google Places API** : Fournit l'autocomplétion des adresses dans les formulaires.
+- **HTML5** et **CSS3** : Structure et design des pages web.
+- **Responsive design** : Mise en page adaptative pour tous les appareils via `responsive.css`.
+- **Leaflet.js** : Affichage de cartes interactives.
+- **FontAwesome** : Icônes modernes et fonctionnelles.
+- **Google Places API** : Autocomplétion des adresses dans les formulaires.
 
 ### Backend
 
-- **PHP** 7.4+.
-- Routage via **Simple PHP Router**.
-- Gestion des sessions pour l'authentification.
+- **PHP** >= 7.4 : Langage principal utilisé pour le développement côté serveur.
+- **Simple PHP Router** : Gestion des routes HTTP.
+- **Sessions PHP** : Gestion sécurisée de l'authentification et des données utilisateur.
+- **dotenv** : Gestion des variables d'environnement via [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv), permettant une configuration centralisée et sécurisée.
+- **PSR-4 Autoloading** : Chargement automatique des classes basé sur les namespaces,
 
 ### Base de données
 
-- **PostgreSQL** : Modèle relationnel pour gérer les utilisateurs, trajets, etc.
+- **PostgreSQL** : Base de données relationnelle utilisée pour gérer les utilisateurs, trajets et réservation.
 
 ---
 
@@ -126,7 +126,7 @@ Le projet utilise **PSR-4** pour le chargement automatique des classes, configur
 Le projet utilise [Simple PHP Router](https://github.com/steampixel/simplePHPRouter) pour définir les routes. Voici quelques exemples :
 
 - `/` : Page d'accueil.
-- `/recherche-trajets` : Recherche de trajets (formulaire en POST).
+- `/connexion` : Page pour se connecter
 - `/publier-trajet` : Publication d'un trajet.
 - `/compte` : Gestion du compte utilisateur.
 

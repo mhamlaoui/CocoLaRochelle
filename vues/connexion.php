@@ -29,7 +29,6 @@
 
             <button type="submit">Se connecter</button>
 
-            <a href="#" class="mot-de-passe-oublie">Mot de passe oublié ?</a>
         </form>
     </main>
 </body>

@@ -82,7 +82,7 @@
     <?php else: ?>
         <p class="trajetNULL">Aucun trajet trouvé pour ces critères.</p>
     <?php endif; ?>
-    <section id="map" style="width: 100%; height: 400px;"></section>
+    <section id="map"></section>
 <?php require 'footer.php'; ?>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </body>

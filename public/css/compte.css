@@ -100,6 +100,7 @@
 }
 
 .compte__bouton-danger {
+    background-color: #fff;
     color: #d9534f;
     border: none;
     font-size: 1.1rem;

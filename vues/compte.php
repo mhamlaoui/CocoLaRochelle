@@ -19,7 +19,7 @@
     <main>
         <?= isset($message) ? "<p class='notification__message'>$message</p>" : '' ?>
         <section class="profil">
-            <img src="<?= $utilisateur['photo_profil'] ? $utilisateur['photo_profil'] : 'https://via.placeholder.com/150' ?>" alt="Photo de profil" class="profil__photo">
+            <img src="<?= $utilisateur['photo_profil'] ? 'public/' . $utilisateur['photo_profil'] : 'https://via.placeholder.com/150' ?>" alt="Photo de profil" class="profil__photo">
             <h2 class="profil__titre"><?=$utilisateur["nom"]?></h2>
             <p class="profil__champ">Email : <?=$utilisateur["email"]?></p>
             <a href="/modifier_informations" class="profil__bouton"><i class="fas fa-edit"></i> Modifier mes informations</a>

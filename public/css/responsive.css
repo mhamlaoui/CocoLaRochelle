@@ -1,5 +1,5 @@
 
-@media (max-width: 1024px) {
+@media (max-width: 1400px) {
   .entete {
     flex-direction: column; 
     padding: 1rem 1rem;
@@ -75,19 +75,6 @@
     padding: 15px 30px; 
     font-size: 1.2rem;
   }
-
-  .section-explications {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .explication {
-    max-width: 100%;
-    padding: 0 15px;
-  }
-}
-
-@media (max-width: 768px) {
   .principale__tritre {
     font-size: 1.6rem; 
     padding-top: 4rem;
@@ -101,7 +88,19 @@
     padding: 15px 30px;
     font-size: 1.2rem;
   }
+}
 
+@media (max-width: 768px) {
+  .section-explications {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .explication {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  
   .pied-page__section {
     flex-direction: column; 
     align-items: center;

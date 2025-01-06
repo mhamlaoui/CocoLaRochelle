@@ -71,7 +71,7 @@
     <p class="trajetNULL">Aucun trajet réservé.</p>
     <?php endif; ?>
     </main>
-    <section id="map" style="width: 100%; height: 400px;"></section>
+    <section id="map"></section>
 
     <?php include 'footer.php'; ?>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

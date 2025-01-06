@@ -5,6 +5,7 @@ CREATE TABLE Utilisateur (
     email VARCHAR(100) UNIQUE NOT NULL,
     mot_de_passe VARCHAR(255) NOT NULL,
     telephone VARCHAR(15),
+    photo_profil VARCHAR(255),
     date_creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

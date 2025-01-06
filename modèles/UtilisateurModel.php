@@ -100,13 +100,14 @@ class UtilisateurModel {
         $requete = $this->pdo->prepare("UPDATE Utilisateur SET mot_de_passe = :mot_de_passe WHERE id_utilisateur = :id_utilisateur");
         return $requete->execute([':mot_de_passe' => $motDePasseHash, ':id_utilisateur' => $id_utilisateur]);
     }
-    public function modifierInformations($id_utilisateur, $nom, $email, $telephone) {
-        $requete = $this->pdo->prepare("UPDATE Utilisateur SET nom = :nom, email = :email, telephone = :telephone WHERE id_utilisateur = :id_utilisateur");
+    public function modifierInformations($id_utilisateur, $nom, $email, $telephone, $photo_profil) {
+        $requete = $this->pdo->prepare("UPDATE Utilisateur SET nom = :nom, email = :email, telephone = :telephone, photo_profil = :photo_profil WHERE id_utilisateur = :id_utilisateur");
         return $requete->execute([
             ':id_utilisateur' => $id_utilisateur,
             ':nom' => $nom,
             ':email' => $email,
-            ':telephone' => $telephone
+            ':telephone' => $telephone,
+            ':photo_profil' => $photo_profil
         ]);
     }
 }
