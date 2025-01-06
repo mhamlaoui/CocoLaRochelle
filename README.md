@@ -75,7 +75,7 @@ Voici les bibliothèques et outils utilisés dans ce projet :
 - [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv) : Gestion des variables d'environnement.
 - [steampixel/simple-php-router](https://github.com/steampixel/simplePHPRouter) : Routeur léger et flexible.
 - [Leaflet.js](https://leafletjs.com/) : Affichage de cartes interactives.
-- [FontAwesome](https://fontawesome.com/) : Icônes modernes et fonctionnellesd.
+- [FontAwesome](https://fontawesome.com/) : Icônes modernes et fonctionnelle.
 - [Google Places API](https://developers.google.com/maps/documentation/places/web-service/overview) : Autocomplétion des adresses pour les formulaires.
 
 ---
@@ -84,12 +84,12 @@ Voici les bibliothèques et outils utilisés dans ce projet :
 
 ### Structure des dossiers
 
-- **`controleurs/`** : Contient les fichiers des contrôleurs pour gérer les requêtes et la logique applicative.
+- **`controleurs/`** : Contient les fichiers des contrôleurs pour gérer les requêtes et la logique.
 - **`modèles/`** : Contient les fichiers des modèles pour interagir avec la base de données.
 - **`vues/`** : Contient les fichiers HTML et PHP pour les interfaces utilisateur.
 - **`public/`** : Contient les fichiers accessibles publiquement, comme les CSS, JS et les images.
-- **`config/`** : Contient les fichiers de configuration de l'application.
-- **`routes/`** : Contient les fichiers de définition des routes pour l'application.
+- **`config/`** : Contient le fichier de configuration de l'application.
+- **`routes/`** : Contient le fichier de définition des routes pour l'application.
 
 ### Chargement automatique PSR-4
 
@@ -117,7 +117,7 @@ Le projet utilise **PSR-4** pour le chargement automatique des classes, configur
 
 ### Base de données
 
-- **PostgreSQL** : Base de données relationnelle utilisée pour gérer les utilisateurs, trajets et réservation.
+- **PostgreSQL** : Base de données utilisée pour gérer les utilisateurs, trajets et réservation.
 
 ---
 
