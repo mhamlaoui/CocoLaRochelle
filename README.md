@@ -59,7 +59,7 @@
 5. **Lancer le projet en local** (serveur PHP intégré) :
 
    ```bash
-   php -S localhost:8000 -t public
+   php -S localhost:8000
    ```
 
 6. **Accéder au projet** :
