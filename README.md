@@ -1,45 +1,147 @@
-# Coco La Rochelle
+# CocoLaRochelle
 
-## Description
-Ce projet est conçu dans le but de promouvoir le covoiturage à La Rochelle. Étant donné que tout ici est interconnecté et que la ville n'est pas trop grande, nous pensons que c'est un endroit idéal pour introduire davantage de covoiturage afin de réduire les émissions. Les habitants se rendent très probablement dans des lieux similaires, en particulier en ville.
+**CocoLaRochelle** est une plateforme de covoiturage locale conçue spécifiquement pour les habitants de La Rochelle. Le projet vise à offrir une solution pour les déplacements sur la commune de La Rochelle.
 
+---
 
-## Ajoutes voz fichiers
+## Fonctionnalités principales
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) ou poussez un dépôt Git existant avec la commande suivante :
+- **Recherche de trajets** : Trouvez rapidement des trajets en covoiturage en fonction de votre point de départ, de votre destination et de la date.
+- **Publication de trajets** : Proposez vos trajets pour aider les autres et réduire vos coûts de déplacement.
+- **Profil utilisateur** : Gérez vos informations, modifiez votre mot de passe et consultez vos trajets publiés.
+- **Communauté locale** : Connectez-vous avec les habitants de La Rochelle partageant les mêmes trajets.
 
-```
-cd existing_repo
-git remote add origin https://gitlab.univ-lr.fr/projets-l2-2024/lesgentlemen/cocolarochelle.git
-git branch -M main
-git push -uf origin main
-```
+---
 
-## Nom
-Coco La Rochelle
+## Installation et configuration
 
-## Description
-Ce projet est conçu dans le but de promouvoir le covoiturage à La Rochelle. Étant donné que tout ici est interconnecté et que la ville n'est pas trop grande, nous pensons que c'est un endroit idéal pour introduire davantage de covoiturage afin de réduire les émissions. Les habitants se rendent très probablement dans des lieux similaires, en particulier en ville.
+### Prérequis
 
+- **PHP** >= 7.4.
+- **Composer** (gestionnaire de dépendances PHP).
+- Serveur web.
+- Une base de données.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+### Étapes d'installation
 
-## Support
-En cas de problème, n'hésitez pas à soumettre une pull request, et nous l'examinerons.
+1. **Cloner le projet** :
 
-## Roadmap
-À l'avenir, nous intégrerons davantage d'APIs pour donner à l'application une dimension plus réaliste et pratique.
+   ```
+   git clone https://gitlab.univ-lr.fr/projets-l2-2024/lesgentlemen/cocolarochelle.git
+   cd cocolarochelle
+   ```
 
-## Contribution
-Actuellement, nous sommes ouverts aux contributions et nous examinerons les pull requests ainsi que les retours de la communauté.
+2. **Installer les dépendances** :
 
-Si vous souhaitez essayer ce projet chez vous, vous pouvez cloner notre dépôt Git, vous connecter à votre gestionnaire PostgreSQL local, tel que pgAdmin4, et répliquer nos tables SQL en y insérant quelques données. À ce stade, vous aurez une réplique fonctionnelle de notre système.
+   ```
+   composer install
+   ```
+
+3. **Configurer les variables d'environnement** :
+
+   - Dupliquez le fichier `.env.example` et renommez-le `.env`.
+   - Renseignez les valeurs de configuration, par exemple :
+
+     ```env
+     DB_CONNECTION=pgsql
+     DB_HOST=localhost
+     DB_NAME=covoiturage
+     DB_USER=root
+     DB_PASSWORD=your_password
+     GOOGLE_MAPS_API_KEY=your_api_key
+     FONTAWESOME_TOKEN=your_fontawesome_token
+     ```
+
+4. **Initialiser la base de données** :
+
+   - Importez le fichier `config/database.sql` dans votre base de données PostgreSQL pour créer les tables nécessaires.
+
+5. **Lancer le projet en local** (serveur PHP intégré) :
+
+   ```bash
+   php -S localhost:8000
+   ```
+
+6. **Accéder au projet** :
+
+   - Ouvrez votre navigateur et rendez-vous sur [http://localhost:8000](http://localhost:8000).
+
+---
+
+## Dépendances
+
+Voici les bibliothèques et outils utilisés dans ce projet :
+
+- [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv) : Gestion des variables d'environnement.
+- [steampixel/simple-php-router](https://github.com/steampixel/simplePHPRouter) : Routeur léger et flexible.
+- [Leaflet.js](https://leafletjs.com/) : Affichage de cartes interactives.
+- [FontAwesome](https://fontawesome.com/) : Icônes modernes et fonctionnelle.
+- [Google Places API](https://developers.google.com/maps/documentation/places/web-service/overview) : Autocomplétion des adresses pour les formulaires.
+
+---
+
+## Architecture du projet
+
+### Structure des dossiers
+
+- **`controleurs/`** : Contient les fichiers des contrôleurs pour gérer les requêtes et la logique.
+- **`modèles/`** : Contient les fichiers des modèles pour interagir avec la base de données.
+- **`vues/`** : Contient les fichiers HTML et PHP pour les interfaces utilisateur.
+- **`public/`** : Contient les fichiers accessibles publiquement, comme les CSS, JS et les images.
+- **`config/`** : Contient le fichier de configuration de l'application.
+- **`routes/`** : Contient le fichier de définition des routes pour l'application.
+
+### Chargement automatique PSR-4
+
+Le projet utilise **PSR-4** pour le chargement automatique des classes, configuré dans `composer.json`. Cette approche permet une organisation des fichiers et une automatisation en fonction des namespaces.
+
+---
+
+## Technologies utilisées
+
+### Frontend
+
+- **HTML5** et **CSS3** : Structure et design des pages web.
+- **Responsive design** : Mise en page adaptative pour tous les appareils via `responsive.css`.
+- **Leaflet.js** : Affichage de cartes interactives.
+- **FontAwesome** : Icônes modernes et fonctionnelles.
+- **Google Places API** : Autocomplétion des adresses dans les formulaires.
+
+### Backend
+
+- **PHP** >= 7.4 : Langage principal utilisé pour le développement côté serveur.
+- **Simple PHP Router** : Gestion des routes HTTP.
+- **Sessions PHP** : Gestion sécurisée de l'authentification et des données utilisateur.
+- **dotenv** : Gestion des variables d'environnement via [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv), permettant une configuration centralisée et sécurisée.
+- **PSR-4 Autoloading** : Chargement automatique des classes basé sur les namespaces,
+
+### Base de données
+
+- **PostgreSQL** : Base de données utilisée pour gérer les utilisateurs, trajets et réservation.
+
+---
+
+## Fonctionnement du routeur
+
+Le projet utilise [Simple PHP Router](https://github.com/steampixel/simplePHPRouter) pour définir les routes. Voici quelques exemples :
+
+- `/` : Page d'accueil.
+- `/connexion` : Page pour se connecter
+- `/publier-trajet` : Publication d'un trajet.
+- `/compte` : Gestion du compte utilisateur.
+
+---
 
 ## Licence
-Ce projet est sous licence MIT.
-Vous êtes libre d'utiliser, de modifier et de distribuer ce logiciel, à condition de donner le crédit approprié à l'auteur ou aux auteurs originaux.
 
-## Projet - état
-Le projet est encore en cours de développement, et de nombreux changements sont à venir. Nous travaillons dur pour vous offrir la meilleure expérience possible.
+Ce projet est sous licence **MIT**. Vous êtes libre de l'utiliser, le modifier et le distribuer.
+
+---
+
+## Contact
+
+Pour toute question ou suggestion, veuillez contacter :
+
+**Pirate Roberts**  
+Email : [pirate.roberts@example.com](mailto:pirate.roberts@example.com)
+

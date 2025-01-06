@@ -1,0 +1,141 @@
+.formulaire {
+    background: linear-gradient(145deg, #fff, #f7f7f7);
+    border: 2px solid #FFD700;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1s ease-out;
+    margin-bottom: 5rem;
+    margin-top: 3rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.titre {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000000;
+    margin: 2rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.formulaire__fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+.formulaire__legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.formulaire__label {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.formulaire__label i {
+    color: #FFD700;
+    margin-right: 10px;
+}
+
+.formulaire__champ,
+.formulaire__select,
+.formulaire__textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formulaire__champ:focus,
+.formulaire__select:focus,
+.formulaire__textarea:focus {
+    border-color: #FFD700;
+    box-shadow: 0 0 5px rgba(255, 214, 0, 0.6);
+}
+
+.formulaire__textarea {
+    resize: none;
+    height: 100px;
+}
+
+.formulaire__bouton {
+    display: inline-block;
+    background: #FFD700;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.formulaire__bouton:hover {
+    background-color: #f0c600;
+    transform: translateY(-3px);
+}
+
+.formulaire__options {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.formulaire__option {
+    background: #FFD700;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.formulaire__option:hover {
+    background: #f0c600;
+    transform: scale(1.1);
+}
+
+/* Messages d'erreur */
+.formulaire__erreur {
+    color: #d9534f;
+    font-size: 0.9rem;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    display: none;
+}
+
+.formulaire__champ--erreur {
+    border-color: #d9534f;
+}

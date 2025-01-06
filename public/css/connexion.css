@@ -1,0 +1,105 @@
+main{
+background-color: #f4f7fc;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+form {
+background-color: #fff;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+padding: 30px;
+width: 100%;
+max-width: 500px;
+}
+
+/* Titre du formulaire */
+h2 {
+text-align: center;
+font-size: 2rem;
+color: #333;
+margin-bottom: 20px;
+font-weight: bold;
+animation: slideIn 1s ease-out;
+
+}
+/* Animation du titre */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Style pour les étiquettes des champs */
+label {
+display: block;
+font-size: 1rem;
+color: #555;
+margin-bottom: 8px;
+}
+
+/* Style pour les champs de saisie */
+input[type="email"], input[type="password"] {
+width: 100%;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #ddd;
+border-radius: 4px;
+font-size: 1rem;
+}
+
+/* Style pour le bouton de connexion */
+button[type="submit"] {
+width: 100%;
+padding: 10px;
+background-color: #ffd600;
+color: white;
+border: none;
+border-radius: 4px;
+font-size: 1rem;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+background-color: #0056b3;
+}
+
+/* Style pour le lien de mot de passe oublié */
+.mot-de-passe-oublie {
+display: block;
+text-align: center;
+margin-top: 15px;
+font-size: 0.9rem;
+color: #007bff;
+text-decoration: none;
+}
+
+.mot-de-passe-oublie:hover {
+text-decoration: underline;
+}
+
+
+/* Style pour le checkbox "Se souvenir de moi" */
+input[type="checkbox"] {
+margin-right: 10px;
+}
+
+label[for="souvenir"] {
+font-size: 0.9rem;
+color: #555;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}

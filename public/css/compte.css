@@ -1,0 +1,136 @@
+.notification__message {
+    color: #388e3c; 
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2rem;
+    display: block;
+}
+
+/* Section Profil */
+.profil {
+    margin: 40px auto;
+    max-width: 600px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+.profil__photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #ffd700;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.profil__titre {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.profil__champ {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.profil__bouton {
+    background-color: #e6c200;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition:  0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.profil__bouton:hover {
+    background: #e6c200;
+    transform: translateY(-3px);
+}
+
+/* Section Gérer mon compte */
+.compte__section {
+    margin: 40px auto;
+    max-width: 600px;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
+}
+
+.compte__titre {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.compte__liste {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.compte__item {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.compte__lien {
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+.compte__lien:hover {
+    color: #e6c200;
+    transform:scale(1.1);;
+}
+
+.compte__bouton-danger {
+    background-color: #fff;
+    color: #d9534f;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+
+.compte__bouton-danger:hover {
+    color: #c9302c;
+    transform: translateY(-3px);
+}
+
+.compte__bouton-deconnexion {
+    background-color: #e60000;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition:  0.3s ease, transform 0.2s ease;
+}
+
+.compte__bouton-deconnexion:hover {
+    background: #e60000;
+    transform: translateY(-3px);
+}

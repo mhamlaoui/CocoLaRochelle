@@ -1,2 +1,159 @@
-@media screen and (width>=60rem) {
+
+@media (max-width: 1400px) {
+  .entete {
+    flex-direction: column; 
+    padding: 1rem 1rem;
+  }
+
+  .entete__lien-titre {
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .entete__logo {
+    height: 80px; 
+  }
+
+  .entete__titre {
+    font-size: 1.6rem; 
+  }
+
+  .entete__navigation {
+    display: none; 
+  }
+
+  .menu-icon {
+    display: inline-block; 
+    font-size: 30px; 
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  .menu-connexion {
+    position: static;
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    list-style: none;
+    display: none; 
+  }
+
+  .menu-connexion a {
+    display: block;
+    padding: 12px 18px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 5px 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: black;
+    border: 3px solid black;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .menu-connexion a:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
+  }
+
+  .menu-connexion.active {
+    display: block;
+  }
+  .formulaire-recherche {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding-top: 6rem; 
+  }
+
+  label {
+    flex: 1 1 100%; 
+    padding: 15px 30px; 
+    font-size: 1.2rem;
+  }
+  .principale__tritre {
+    font-size: 1.6rem; 
+    padding-top: 4rem;
+  }
+
+  .formulaire-recherche {
+    padding-top: 5rem;
+  }
+
+  .bouton-recherche {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-explications {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .explication {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  
+  .pied-page__section {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .pied-page__formulaire, 
+  .pied-page__contact, 
+  .pied-page__a-propos, 
+  .pied-page__reseaux, 
+  .pied-page__legales {
+    width: 100%; 
+    margin-bottom: 20px;
+  }
+
+  .pied-page__contact-mail {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .principale {
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  .principale__tritre {
+    font-size: 1.4rem;
+    padding-top: 2rem;
+  }
+
+  label {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .bouton-recherche {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .section-explications {
+    padding: 40px 10px;
+  }
+
+  .explication__titre {
+    font-size: 24px;
+  }
+
+  .explication__element {
+    font-size: 18px;
+  }
+
+  .green-icon, .cyan-icon {
+    font-size: 28px;
+  }
 }

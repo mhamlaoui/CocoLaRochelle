@@ -1,56 +1,94 @@
-
-/* inscription */
-
-.inscription {
-    background-color: white;
-    border-radius: 10px;
-    padding: 30px;
-    width: 90%;
-    max-width: 600px;
-    margin: 0 auto;
-    box-shadow:  10px 7px 7px rgba(13, 13, 13, 0.1);
-}
-
-
-.inscription__titre {
-    font-size: 30px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
-.inscription__formulaire{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-.inscription__groupe {
+main{
     display: flex;
-    flex-direction: column;
-    text-align: left;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.inscription__label {
-    margin-bottom: 5px;
-    font-weight: bold;
+form {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Titre du formulaire */
+h2 {
+    text-align: center;
+    font-size: 2rem;
     color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    animation: slideIn 1s ease-out;
+}
+/* Animation du titre */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-.inscription__champ {
-    padding: 12px;
-    border-radius: 5px;
+/* Style pour les étiquettes des champs */
+label {
+    display: block;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* Style pour les champs de saisie */
+input[type="email"], input[type="password"],input[type="text"]{
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
     border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
 }
 
-.inscription__bouton {
-    padding: 15px;
-    background-color: rgb(36, 24, 146);
+/* Bouton d'inscription */
+input[type="submit"] {
+    width: 100%;
+    background-color: #ffd600;
     color: white;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
+    font-size: 1rem;
     cursor: pointer;
-    font-size: 18px;
 }
 
-.inscription__bouton:hover {
-    background-color: rgb(66, 48, 226);
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Style pour le message d'erreur */
+.error {
+    color: red;
+    font-size: 1rem;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+
+.deja-inscrit {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+.deja-inscrit a{
+    color: #007bff;
+    text-decoration: none;
+}
+
+.deja-inscrit a:hover {
+text-decoration: underline;
 }

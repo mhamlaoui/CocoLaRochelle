@@ -11,39 +11,24 @@
 </head>
 <body>
     <main class="principal">
-        <section class="inscription">
-            <h2 class="inscription__titre">Inscription</h2>
-                <form class="inscription__formulaire" method="POST">
-                <fieldset class="inscription__groupe">
-                    <label for="nom_utilisateur" class="inscription__label">Nom d'utilisateur :</label>
-                    <input type="text" name="nom_utilisateur" class="inscription__champ" required>
-                </fieldset>
-                
-                <fieldset class="inscription__groupe">
-                    <label for="mdp" class="inscription__label">Mot de passe :</label>
-                    <input type="password" name="mot_de_passe" class="inscription__champ" required>
-                </fieldset>
-                
-                <fieldset class="inscription__groupe">
-                    <label for="telephone" class="inscription__label">Téléphone :</label>
-                    <input type="text" name="telephone" class="inscription__champ">
-                </fieldset>
-                
-                <fieldset class="inscription__groupe">
-                    <label for="email" class="inscription__label">Email :</label>
-                    <input type="email" name="email" class="inscription__champ" required>
-                </fieldset>
-                <fieldset class="inscription__groupe">
-                    <label for="date_naissance" class="inscription__label">Date of Birth:</label>
-                    <input type="date" name="date_naissance" class="inscription__champ">
-                </fieldset>
-                <input type="hidden" name="action" value="inscription">
-                <button type="submit" class="inscription__bouton" id="send_inscription">Sign Up</button>
-            </form>
-            <p>Déjà inscrit ? <a href="connexion">Connectez-vous ici</a></p>
-        </section>
+        <form method="POST">
+            <h2>Inscription</h2>
+
+            <label for="nom_utilisateur">Nom d'utilisateur</label>
+            <input type="text" id="nom_utilisateur" name="nom_utilisateur" placeholder="Entrez votre nom d'utilisateur" required>
+
+            <label for="email">Adresse e-mail</label>
+            <input type="email" id="email" name="email" placeholder="Entrez votre e-mail" required>
+
+            <label for="mot_de_passe">Mot de passe</label>
+            <input type="password" id="mot_de_passe" name="mot_de_passe" placeholder="Entrez votre mot de passe" required>
+
+            <p class="error"><?= $error_message ? $error_message : ""; ?></p>
+
+            <input type="submit" value="S'inscrire">
+            <p class="deja-inscrit">Déjà inscrit ? <a href="connexion">Connectez-vous ici</a></p>
+        </form>
     </main>
 
-    <?php include 'footer.php'; ?>
 </body>
 </html>
