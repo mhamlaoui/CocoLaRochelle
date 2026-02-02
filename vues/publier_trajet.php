@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="public/css/responsive.css">
     <script src="public/js/autocomplete.js" defer></script>
     <script src="public/js/menu.js" defer></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=<?=$_ENV['GOOGLE_MAPS_API_KEY']?>&libraries=places" 
+    <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo $_ENV['GOOGLE_MAPS_API_KEY']; ?>&libraries=places" 
     async defer></script>
     <script src="https://kit.fontawesome.com/<?=$_ENV['FONTAWESOME_TOKEN']?>.js" crossorigin="anonymous"></script>
 </head>
