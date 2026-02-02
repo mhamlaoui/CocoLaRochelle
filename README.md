@@ -138,9 +138,7 @@ Ce projet est sous licence **MIT**. Vous êtes libre de l'utiliser, le modifier 
 
 ---
 
-## Contact
 
-Pour toute question ou suggestion, veuillez contacter :
 
 **Pirate Roberts**  
 Email : [pirate.roberts@example.com](mailto:pirate.roberts@example.com)
